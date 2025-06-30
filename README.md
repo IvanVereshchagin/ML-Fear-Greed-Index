@@ -14,8 +14,8 @@ docker-compose up
 ```
 
 🌐 После запуска приложение будет доступно по адресу:   
-api : http://localhost:8000    
-frontend : http://localhost:3000   
+- api : http://localhost:8000    
+- frontend : http://localhost:3000   
     
 
 ## 📊 Описание продукта  
