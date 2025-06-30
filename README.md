@@ -328,7 +328,24 @@ obv_ALRS, obv_GOLD, atr_RTS, obv_RTS, obv_SI, obv_RTKM, Day, obv_FEES, Month, ob
 - `mean_{model}_mean_10` — скользящее среднее ряда предсказаний 
 - `std_{model}_std_10` — стандартное отклонение ряда предсказаний 
 - `min_{model}_min_10` — минимум ряда предсказаний 
-- `max_{model}_max_10` — максимум ряда предсказаний 
+- `max_{model}_max_10` — максимум ряда предсказаний
+
+Добавление мета-модели и мета-признаков позволило получить значение метрики MAE лучше, чем у переобученной модели (см. Эксперимент 1) : 
+
+| Fold   |  RMSE  |  MAE   |   R²   |
+|--------|--------|--------|--------|
+| Fold 1 | 0.5135 | 0.1653 | 0.9992 |
+| Fold 2 | 0.5577 | 0.1693 | 0.9990 |
+| Fold 3 | 0.5117 | 0.1665 | 0.9992 |
+| Fold 4 | 0.5359 | 0.1662 | 0.9991 |
+| Fold 5 | 0.5162 | 0.1654 | 0.9992 |
+| **CV mean** | **0.5270** | **0.1665** | **0.9991** |
+
+Признаки в итоговой модели: 
+close_CHMF_q75_15, close_TATN_q25_15, close_SNGSP_min_15, close_GOLD_q75_15, close_MTSS_q75_15, close_CHMF_median_15, close_SI_median_15, close_RTKM_mean_15, close_RVI_q25_15, close_ALRS_max_15, close_SNGSP_q75_15, close_RTKM_q25_15, close_MTLR_q75_15, close_IMOEX_max_15, close_IRAO_q25_15, close_LKOH_mean_15, close_RVI_median_15, close_AFKS_q25_15, close_SNGSP_max_15, close_GMKN_mean_15, close_MTSS_median_15, close_ROSN_max_15, close_MTLR_q25_15, close_GOLD_mean_15, close_RVI_q75_15, close_AFKS_max_15, close_SI_q75_15, close_TATN_max_15, close_GOLD_q25_15, close_RVI_min_15, close_IRAO_min_15, close_RVI_skew_15, close_SI_min_15, close_HYDR_q25_15, close_SI_q25_15, close_RTS_q25_15, close_NVTK_q75_15, close_MTLR_min_15, close_MOEX_mean_15, close_RTS_max_15, close_ROSN_min_15, close_MTSS_mean_15, close_SBERP_mean_15, close_NVTK_count_above_mean_15,  close_MAGN_min_15, close_RTS_mean_15, close_ALRS_median_15, close_MAGN_q75_15, close_MTSS_min_15, close_AFKS_min_15, close_MTSS_max_15, close_AFLT_median_15, close_LKOH_q75_15, close_TATN_mean_15, close_CHMF_max_15, close_SNGS_min_15, close_SI_mean_15, close_HYDR_q75_15, close_ALRS_q75_15, close_NVTK_min_15, close_MTLR_median_15, close_MTSS_q25_15, close_RTS_median_15, close_AFLT_q25_15, close_FEES_max_15, close_SNGS_q25_15, close_FEES_median_15, close_SNGSP_q25_15, close_MTLR_mean_15, obv_ALRS, obv_GOLD, atr_RTS, obv_RTS, obv_SI, obv_RTKM, Day, obv_FEES, Month, obv_SBERP, obv_ROSN, obv_TATN, obv_GMKN, obv_NVTK, obv_SNGS, obv_HYDR, obv_AFLT, obv_SNGSP, obv_AFKS, obv_VTBR, obv_IRAO, 10min_std_RTS, obv_MTLR, obv_NLMK, obv_GAZP, obv_MAGN, obv_MTSS, obv_LKOH, obv_MOEX, obv_CHMF, Hour, obv_IMOEX.
+
+
+
 
 
 
