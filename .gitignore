@@ -1,0 +1,57 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest
+.pytest_cache/
+
+# Virtual environment
+venv/
+.env
+*.env
+
+# Editor directories and files
+.idea/
+.vscode/
+
+
+# Jupyter Notebook checkpoints (если используете)
+.ipynb_checkpoints/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Docker
+docker-compose.override.yml
+*.tar
+
+# Frontend node modules and build output
+frontend/node_modules/
+node_modules/
+dist/
+build/
+
+# Tailwind / PostCSS
+*.css.map
+
+# Compiled config files
+*.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+htmlcov/
+coverage.xml
+*.cover
+.cache
+.tox/
+
+# Ignore secrets if accidentally added
+secrets.json
+credentials.json
+node_modules
