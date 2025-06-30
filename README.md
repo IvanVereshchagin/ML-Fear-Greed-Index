@@ -11,6 +11,10 @@ git clone https://github.com/IvanVereshchagin/ML-Fear-Greed-Index.git
 cd ML-Fear-Greed-Index
 docker-compose build
 docker-compose up
+
+🌐 После запуска приложение будет доступно по адресу:
+api : http://localhost:8000
+frontend : http://localhost:3000
     
 
 ## 📊 Описание продукта  
