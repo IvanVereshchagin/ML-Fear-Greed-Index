@@ -200,29 +200,34 @@ docker-compose up
 <img src="https://github.com/user-attachments/assets/8b93747f-b9b2-48ec-9c64-4e56a4bdd5fc" width="400"/>
 <br>     
 Значение 100 было плавно распределено среди значений в 95-100, что сгладило распределение. Подобная трансформация не повлияет негативно на предсказания: значения больше 60 принадлежали периоду 2022 года (эффект СВО). На отмасштабированном распределении значения 60-65 переходят в отрезок 90-100. Распределив 100 в отрезок 95-100 , наблюдения из 2022 года не смешаются с другими высокими значениями из периода пандемии и ноября 2024 года. Они были представлены на старом распределении значениями 55-57, то есть на новом 80-90). Данное преобразование сгладило "хвост" 
-      
-![image](https://github.com/user-attachments/assets/292c3ca4-9a86-4ae2-9082-5d5c5409fd6c)
+
+<img src="https://github.com/user-attachments/assets/292c3ca4-9a86-4ae2-9082-5d5c5409fd6c" width="400"/>
 <br>
 
 ### Было принято решение вместо использования train_test_split использовать кросс-валидацию по фолдам.
-В качестве фолдов изначально были выбраны года из выборки (2017 - 2025). Однако, наблюдается дисбаланс количества наблюдений по разным годам
-![image](https://github.com/user-attachments/assets/f8c40434-af0e-4bc8-b21f-e5e65fbea2c5)
-Для уменьшения дисбаланса наблюдений в фолдах некоторые фолды (года) были сгруппированы, а некоторые наоборот разбиты на более мелкие периоды. В итоге получились следующие фолды с примерно равным количеством наблюдений: Фолд1 - с 2017 по 2019 год включительно. Фолд2 - 2020 год. Фолд 3 и 4 - 1 и 2 половины 2021 года. Фолд 5 - 2022 год. Фолд 6 и 7  - 1 и 2 половины 2023 года. 8 Фолд - первые 8 месяцев 2024 года. 9 Фолд - остальные наблюдения вплоть до марта 2025 года.
-![image](https://github.com/user-attachments/assets/43efd674-b5a8-4219-9fda-2db007a049d9)
+В качестве фолдов изначально были выбраны года из выборки (2017 - 2025). Однако, наблюдается дисбаланс количества наблюдений по разным годам   
+
+<img src="https://github.com/user-attachments/assets/f8c40434-af0e-4bc8-b21f-e5e65fbea2c5" width="400"/>   
+    
+Для уменьшения дисбаланса наблюдений в фолдах некоторые фолды (года) были сгруппированы, а некоторые наоборот разбиты на более мелкие периоды. В итоге получились следующие фолды с примерно равным количеством наблюдений: Фолд1 - с 2017 по 2019 год включительно. Фолд2 - 2020 год. Фолд 3 и 4 - 1 и 2 половины 2021 года. Фолд 5 - 2022 год. Фолд 6 и 7  - 1 и 2 половины 2023 года. 8 Фолд - первые 8 месяцев 2024 года. 9 Фолд - остальные наблюдения вплоть до марта 2025 года.      
+  
+<img src="https://github.com/user-attachments/assets/43efd674-b5a8-4219-9fda-2db007a049d9" width="400"/> 
+
 
 На всех фолдах таргет имеет разное распределение. Идея разбиения на временные фолды продиктована желанием оценить предсказательную способность модели на определенном периоде, выучив выборку из остальных (ее способность подстроиться под новое распределение).
 
-Различие распределений:
+Различие распределений:   
+    
 
-![image](https://github.com/user-attachments/assets/88106d23-dd50-4595-b867-11919ab240e9)
-![image](https://github.com/user-attachments/assets/c6035e59-c7f8-482b-815f-c2a4ce4c3129)
-![image](https://github.com/user-attachments/assets/4e9bef37-3c73-4792-b1b6-1e9d8e82e6c0)
-![image](https://github.com/user-attachments/assets/2b977e29-5bdb-42ac-a67d-9ece38b865d7)
-![image](https://github.com/user-attachments/assets/7e8bd8ba-4023-4486-b512-2e493f3c3b15)
-![image](https://github.com/user-attachments/assets/cfaa7ad9-8d0d-44cc-9e0d-e7489f070f54)
-![image](https://github.com/user-attachments/assets/5661aa13-f9c8-4906-85d1-789105064c0f)
-![image](https://github.com/user-attachments/assets/ac59eeaf-6230-403e-a7df-ca26e6083717)
-![image](https://github.com/user-attachments/assets/a3961d76-c772-4ae5-8554-3a32a8ed1937)
+<img src="https://github.com/user-attachments/assets/88106d23-dd50-4595-b867-11919ab240e9" width="400"/> 
+<img src="https://github.com/user-attachments/assets/c6035e59-c7f8-482b-815f-c2a4ce4c3129" width="400"/> 
+<img src="https://github.com/user-attachments/assets/4e9bef37-3c73-4792-b1b6-1e9d8e82e6c0" width="400"/> 
+<img src="https://github.com/user-attachments/assets/2b977e29-5bdb-42ac-a67d-9ece38b865d7" width="400"/> 
+<img src="https://github.com/user-attachments/assets/7e8bd8ba-4023-4486-b512-2e493f3c3b15" width="400"/> 
+<img src="https://github.com/user-attachments/assets/cfaa7ad9-8d0d-44cc-9e0d-e7489f070f54" width="400"/> 
+<img src="https://github.com/user-attachments/assets/5661aa13-f9c8-4906-85d1-789105064c0f" width="400"/> 
+<img src="https://github.com/user-attachments/assets/ac59eeaf-6230-403e-a7df-ca26e6083717" width="400"/> 
+<img src="https://github.com/user-attachments/assets/a3961d76-c772-4ae5-8554-3a32a8ed1937" width="400"/> 
 
 ### Было принято решение обучить 3 модели - XGB, Catboost, LGBM с параметрами n_estimators = 10_000 , early_stopping_rounds = 300.
 Результаты обучения и валидации (MAE):
@@ -356,8 +361,7 @@ obv_ALRS, obv_GOLD, atr_RTS, obv_RTS, obv_SI, obv_RTKM, Day, obv_FEES, Month, ob
 | Fold 5 | 0.5162 | 0.1654 | 0.9992 |
 | **CV mean** | **0.5270** | **0.1665** | **0.9991** |
 
-### Признаки в итоговой модели: 
-close_CHMF_q75_15, close_TATN_q25_15, close_SNGSP_min_15, close_GOLD_q75_15, close_MTSS_q75_15, close_CHMF_median_15, close_SI_median_15, close_RTKM_mean_15, close_RVI_q25_15, close_ALRS_max_15, close_SNGSP_q75_15, close_RTKM_q25_15, close_MTLR_q75_15, close_IMOEX_max_15, close_IRAO_q25_15, close_LKOH_mean_15, close_RVI_median_15, close_AFKS_q25_15, close_SNGSP_max_15, close_GMKN_mean_15, close_MTSS_median_15, close_ROSN_max_15, close_MTLR_q25_15, close_GOLD_mean_15, close_RVI_q75_15, close_AFKS_max_15, close_SI_q75_15, close_TATN_max_15, close_GOLD_q25_15, close_RVI_min_15, close_IRAO_min_15, close_RVI_skew_15, close_SI_min_15, close_HYDR_q25_15, close_SI_q25_15, close_RTS_q25_15, close_NVTK_q75_15, close_MTLR_min_15, close_MOEX_mean_15, close_RTS_max_15, close_ROSN_min_15, close_MTSS_mean_15, close_SBERP_mean_15, close_NVTK_count_above_mean_15,  close_MAGN_min_15, close_RTS_mean_15, close_ALRS_median_15, close_MAGN_q75_15, close_MTSS_min_15, close_AFKS_min_15, close_MTSS_max_15, close_AFLT_median_15, close_LKOH_q75_15, close_TATN_mean_15, close_CHMF_max_15, close_SNGS_min_15, close_SI_mean_15, close_HYDR_q75_15, close_ALRS_q75_15, close_NVTK_min_15, close_MTLR_median_15, close_MTSS_q25_15, close_RTS_median_15, close_AFLT_q25_15, close_FEES_max_15, close_SNGS_q25_15, close_FEES_median_15, close_SNGSP_q25_15, close_MTLR_mean_15, obv_ALRS, obv_GOLD, atr_RTS, obv_RTS, obv_SI, obv_RTKM, Day, obv_FEES, Month, obv_SBERP, obv_ROSN, obv_TATN, obv_GMKN, obv_NVTK, obv_SNGS, obv_HYDR, obv_AFLT, obv_SNGSP, obv_AFKS, obv_VTBR, obv_IRAO, 10min_std_RTS, obv_MTLR, obv_NLMK, obv_GAZP, obv_MAGN, obv_MTSS, obv_LKOH, obv_MOEX, obv_CHMF, Hour, obv_IMOEX.
+
 
 
 
