@@ -434,7 +434,7 @@ def get_current_features1():
 
     total_preds = randomforest_metamodel.predict(meta_X_plus)
     print('total_preds' , total_preds)
-    total_pred  = total_preds[0]
+    total_pred  = total_preds[-1]
     print(total_pred)
 
     return total_pred
