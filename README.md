@@ -211,7 +211,7 @@ docker-compose up
     
 Для уменьшения дисбаланса наблюдений в фолдах некоторые фолды (года) были сгруппированы, а некоторые наоборот разбиты на более мелкие периоды. В итоге получились следующие фолды с примерно равным количеством наблюдений: Фолд1 - с 2017 по 2019 год включительно. Фолд2 - 2020 год. Фолд 3 и 4 - 1 и 2 половины 2021 года. Фолд 5 - 2022 год. Фолд 6 и 7  - 1 и 2 половины 2023 года. 8 Фолд - первые 8 месяцев 2024 года. 9 Фолд - остальные наблюдения вплоть до марта 2025 года.      
   
-<img src="https://github.com/user-attachments/assets/43efd674-b5a8-4219-9fda-2db007a049d9" width="400"/> 
+<img src="https://github.com/user-attachments/assets/43efd674-b5a8-4219-9fda-2db007a049d9" width="600"/> 
 
 
 На всех фолдах таргет имеет разное распределение. Идея разбиения на временные фолды продиктована желанием оценить предсказательную способность модели на определенном периоде, выучив выборку из остальных (ее способность подстроиться под новое распределение).
@@ -219,15 +219,15 @@ docker-compose up
 Различие распределений:   
     
 
-<img src="https://github.com/user-attachments/assets/88106d23-dd50-4595-b867-11919ab240e9" width="400"/> 
-<img src="https://github.com/user-attachments/assets/c6035e59-c7f8-482b-815f-c2a4ce4c3129" width="400"/> 
-<img src="https://github.com/user-attachments/assets/4e9bef37-3c73-4792-b1b6-1e9d8e82e6c0" width="400"/> 
-<img src="https://github.com/user-attachments/assets/2b977e29-5bdb-42ac-a67d-9ece38b865d7" width="400"/> 
-<img src="https://github.com/user-attachments/assets/7e8bd8ba-4023-4486-b512-2e493f3c3b15" width="400"/> 
-<img src="https://github.com/user-attachments/assets/cfaa7ad9-8d0d-44cc-9e0d-e7489f070f54" width="400"/> 
-<img src="https://github.com/user-attachments/assets/5661aa13-f9c8-4906-85d1-789105064c0f" width="400"/> 
-<img src="https://github.com/user-attachments/assets/ac59eeaf-6230-403e-a7df-ca26e6083717" width="400"/> 
-<img src="https://github.com/user-attachments/assets/a3961d76-c772-4ae5-8554-3a32a8ed1937" width="400"/> 
+<img src="https://github.com/user-attachments/assets/88106d23-dd50-4595-b867-11919ab240e9" width="500"/> 
+<img src="https://github.com/user-attachments/assets/c6035e59-c7f8-482b-815f-c2a4ce4c3129" width="500"/> 
+<img src="https://github.com/user-attachments/assets/4e9bef37-3c73-4792-b1b6-1e9d8e82e6c0" width="500"/> 
+<img src="https://github.com/user-attachments/assets/2b977e29-5bdb-42ac-a67d-9ece38b865d7" width="500"/> 
+<img src="https://github.com/user-attachments/assets/7e8bd8ba-4023-4486-b512-2e493f3c3b15" width="500"/> 
+<img src="https://github.com/user-attachments/assets/cfaa7ad9-8d0d-44cc-9e0d-e7489f070f54" width="500"/> 
+<img src="https://github.com/user-attachments/assets/5661aa13-f9c8-4906-85d1-789105064c0f" width="500"/> 
+<img src="https://github.com/user-attachments/assets/ac59eeaf-6230-403e-a7df-ca26e6083717" width="500"/> 
+<img src="https://github.com/user-attachments/assets/a3961d76-c772-4ae5-8554-3a32a8ed1937" width="500"/> 
 
 ### Было принято решение обучить 3 модели - XGB, Catboost, LGBM с параметрами n_estimators = 10_000 , early_stopping_rounds = 300.
 Результаты обучения и валидации (MAE):
