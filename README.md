@@ -271,6 +271,7 @@ docker-compose up
 <img src="https://github.com/user-attachments/assets/a3961d76-c772-4ae5-8554-3a32a8ed1937" width="500"/> 
 
 ### Было принято решение обучить 3 модели - XGB, Catboost, LGBM с параметрами n_estimators = 10_000 , early_stopping_rounds = 300.
+
 Результаты обучения и валидации (MAE):
 
 | Fold                  | CatBoost |  LGBM  | XGBoost |
