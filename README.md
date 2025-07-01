@@ -189,9 +189,10 @@ docker-compose up
 Разнонаправленность RVI и RGBI:  
 
 <img src="https://github.com/user-attachments/assets/739a55b2-3567-4eee-8dd1-3348db4e9bb2" width="400"/>   
-<img src="https://github.com/user-attachments/assets/e95d28fb-53e2-40ba-931b-f6cf67e1f390" width="400"/>   
+<img src="https://github.com/user-attachments/assets/e95d28fb-53e2-40ba-931b-f6cf67e1f390" width="550"/>   
 
-График итогового распределения таргета:
+График итогового распределения таргета:     
+
 <img src="https://github.com/user-attachments/assets/cf17876d-46ba-405c-8361-d073d4426cb6" width="600"/>
 
 
